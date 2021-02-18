@@ -6,29 +6,29 @@ services:
   shard1svr1:
     container_name: shard1svr1
     image: mongo
-    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
+    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /mnt/cims_prod_shard1
     ports:
       - 50001:27017
     volumes:
-      - shard1svr1:/data/db
+      - shard1svr1:/mnt/cims_prod_shard1
 
   shard1svr2:
     container_name: shard1svr2
     image: mongo
-    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
+    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /mnt/cims_prod_shard1
     ports:
       - 50002:27017
     volumes:
-      - shard1svr2:/data/db
+      - shard1svr2:/mnt/cims_prod_shard1
 
   shard1svr3:
     container_name: shard1svr3
     image: mongo
-    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /data/db
+    command: mongod --shardsvr --replSet shard1rs --port 27017 --dbpath /mnt/cims_prod_shard1
     ports:
       - 50003:27017
     volumes:
-      - shard1svr3:/data/db
+      - shard1svr3:/mnt/cims_prod_shard1
 
 volumes:
   shard1svr1: {}
